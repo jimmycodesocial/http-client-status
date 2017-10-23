@@ -1,0 +1,26 @@
+{
+  "name": "http-client-status",
+  "version": "0.5.0",
+  "description": "Inspect/Check HTTP status code",
+  "keywords": [
+    "http",
+    "status-codes",
+    "http-status-codes",
+    "status",
+    "codes"
+  ],
+  "author": "JimmyCode Social <hi@jimmycode.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/jimmycodesocial/http-client-status#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jimmycodesocial/http-client-status.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jimmycodesocial/http-client-status/issues"
+  },
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
