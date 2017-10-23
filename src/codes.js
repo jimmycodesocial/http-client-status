@@ -74,7 +74,7 @@ export const NETWORK_AUTHENTICATION_REQUIRED = 511;
  * Give a text description to each code.
  */
 
-export const texts = {
+export const statusTexts = {
   100: 'Continue',
   101: 'Switching Protocols',
   200: 'OK',
@@ -135,4 +135,12 @@ export const texts = {
   508: 'Loop Detected',
   510: 'Not Extended',
   511: 'Network Authentication Required'
+};
+
+export const getStatusText = (statusCode) => {
+  if (statusTexts.hasOwnProperty(statusCode)) {
+    return statusTexts[statusCode];
+  }
+
+  throw new Error("Status code does not exist: " + statusCode);
 };
