@@ -22,6 +22,8 @@ describe('package', () => {
   it ('should inspect a code', () => {
     expect(_package.codes[401]).to.be.equal('Unauthorized');
     expect(_package.codes[401]).to.be.equal(_package.getStatusText(401));
+    expect(_package.codes[_package.constants.UNAUTHORIZED]).to.be.equal(_package.getStatusText(401));
+    expect(_package.codes[401]).to.be.equal(_package.getStatusText(_package.constants.UNAUTHORIZED));
   });
 
   it ('should expose all constants', () => {

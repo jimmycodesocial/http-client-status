@@ -1,2 +1,77 @@
 # http-client-status
 Inspect/Check HTTP status code
+
+## Install
+```
+$ npm install --save http-client-status
+```
+
+## Usage
+*Get text description of code.*
+
+```js
+import { constants, codes, getStatusText } from 'http-client-status';
+
+console.log(codes[404]); 
+//=> Not Found
+
+console.log(codes[constants.NOT_FOUND]);
+//=> Not Found
+
+console.log(getStatusText(404)); 
+//=> Not Found
+
+console.log(getStatusText(constants.NOT_FOUND));
+//=> Not Found
+```
+
+*Check group.*
+```js
+import {
+  constants,
+  is_informational,
+  is_success,
+  is_redirect,
+  is_client_error,
+  is_server_error
+} from 'http-client-status';
+
+console.log(is_informational(101)); 
+//=> true
+
+console.log(is_informational(constants.SWITCHING_PROTOCOLS)); 
+//=> true
+
+console.log(is_success(200)); 
+//=> true
+
+console.log(is_success(constants.OK)); 
+//=> true
+
+console.log(is_redirect(301)); 
+//=> true
+
+console.log(is_redirect(constants.MOVED_PERMANENTLY)); 
+//=> true
+
+console.log(is_client_error(404)); 
+//=> true
+
+console.log(is_client_error(constants.NOT_FOUND)); 
+//=> true
+
+console.log(is_server_error(500)); 
+//=> true
+
+console.log(is_server_error(constants.INTERNAL_SERVER_ERROR)); 
+//=> true
+```
+
+## Credits
+This package is strongly inspired by:
+* https://github.com/encode/django-rest-framework/blob/master/rest_framework/status.py
+* https://github.com/bendrucker/builtin-status-codes
+* https://github.com/arthurvr/is-success
+* https://github.com/sindresorhus/is-redirect
+* https://github.com/arthurvr/is-client-error
+* https://github.com/arthurvr/is-server-error
