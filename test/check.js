@@ -13,7 +13,7 @@ import {
   is_client_error,
   is_server_error
 } from '../src/check';
-const codes = require('../src/codes');
+const constants = require('../src/constants');
 
 describe('check', () => {
   describe('is_one_of()', () => {
@@ -46,11 +46,11 @@ describe('check', () => {
     });
 
     it ('should recognize constants', () => {
-      expect(is_informational(codes.SWITCHING_PROTOCOLS)).to.be.true;
-      expect(is_informational(codes.NOT_FOUND)).to.be.false;
-      expect(is_informational(codes.MOVED_PERMANENTLY)).to.be.false;
-      expect(is_informational(codes.OK)).to.be.false;
-      expect(is_informational(codes.INTERNAL_SERVER_ERROR)).to.be.false;
+      expect(is_informational(constants.SWITCHING_PROTOCOLS)).to.be.true;
+      expect(is_informational(constants.NOT_FOUND)).to.be.false;
+      expect(is_informational(constants.MOVED_PERMANENTLY)).to.be.false;
+      expect(is_informational(constants.OK)).to.be.false;
+      expect(is_informational(constants.INTERNAL_SERVER_ERROR)).to.be.false;
     });
   });
 
@@ -64,11 +64,11 @@ describe('check', () => {
     });
 
     it ('should recognize constants', () => {
-      expect(is_success(codes.OK)).to.be.true;
-      expect(is_success(codes.INTERNAL_SERVER_ERROR)).to.be.false;
-      expect(is_success(codes.NOT_FOUND)).to.be.false;
-      expect(is_success(codes.MOVED_PERMANENTLY)).to.be.false;
-      expect(is_success(codes.SWITCHING_PROTOCOLS)).to.be.false;
+      expect(is_success(constants.OK)).to.be.true;
+      expect(is_success(constants.INTERNAL_SERVER_ERROR)).to.be.false;
+      expect(is_success(constants.NOT_FOUND)).to.be.false;
+      expect(is_success(constants.MOVED_PERMANENTLY)).to.be.false;
+      expect(is_success(constants.SWITCHING_PROTOCOLS)).to.be.false;
     });
   });
 
@@ -82,11 +82,11 @@ describe('check', () => {
     });
 
     it ('should recognize constants', () => {
-      expect(is_redirect(codes.MOVED_PERMANENTLY)).to.be.true;
-      expect(is_redirect(codes.INTERNAL_SERVER_ERROR)).to.be.false;
-      expect(is_redirect(codes.NOT_FOUND)).to.be.false;
-      expect(is_redirect(codes.OK)).to.be.false;
-      expect(is_redirect(codes.SWITCHING_PROTOCOLS)).to.be.false;
+      expect(is_redirect(constants.MOVED_PERMANENTLY)).to.be.true;
+      expect(is_redirect(constants.INTERNAL_SERVER_ERROR)).to.be.false;
+      expect(is_redirect(constants.NOT_FOUND)).to.be.false;
+      expect(is_redirect(constants.OK)).to.be.false;
+      expect(is_redirect(constants.SWITCHING_PROTOCOLS)).to.be.false;
     });
   });
 
@@ -100,11 +100,11 @@ describe('check', () => {
     });
 
     it ('should recognize constants', () => {
-      expect(is_client_error(codes.NOT_FOUND)).to.be.true;
-      expect(is_client_error(codes.INTERNAL_SERVER_ERROR)).to.be.false;
-      expect(is_client_error(codes.MOVED_PERMANENTLY)).to.be.false;
-      expect(is_client_error(codes.OK)).to.be.false;
-      expect(is_client_error(codes.SWITCHING_PROTOCOLS)).to.be.false;
+      expect(is_client_error(constants.NOT_FOUND)).to.be.true;
+      expect(is_client_error(constants.INTERNAL_SERVER_ERROR)).to.be.false;
+      expect(is_client_error(constants.MOVED_PERMANENTLY)).to.be.false;
+      expect(is_client_error(constants.OK)).to.be.false;
+      expect(is_client_error(constants.SWITCHING_PROTOCOLS)).to.be.false;
     });
   });
 
@@ -118,11 +118,11 @@ describe('check', () => {
     });
 
     it ('should recognize constants', () => {
-      expect(is_server_error(codes.INTERNAL_SERVER_ERROR)).to.be.true;
-      expect(is_server_error(codes.NOT_FOUND)).to.be.false;
-      expect(is_server_error(codes.MOVED_PERMANENTLY)).to.be.false;
-      expect(is_server_error(codes.OK)).to.be.false;
-      expect(is_server_error(codes.SWITCHING_PROTOCOLS)).to.be.false;
+      expect(is_server_error(constants.INTERNAL_SERVER_ERROR)).to.be.true;
+      expect(is_server_error(constants.NOT_FOUND)).to.be.false;
+      expect(is_server_error(constants.MOVED_PERMANENTLY)).to.be.false;
+      expect(is_server_error(constants.OK)).to.be.false;
+      expect(is_server_error(constants.SWITCHING_PROTOCOLS)).to.be.false;
     });
   });
 });

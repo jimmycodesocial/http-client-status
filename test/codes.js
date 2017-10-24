@@ -5,39 +5,35 @@
 'use strict';
 
 import { expect } from 'chai';
-const codes = require('../src/codes');
+import { statusTexts, getStatusText } from '../src/codes';
+const constants = require('../src/constants');
 
 describe('codes', () => {
   it ('should have a text description', () => {
-    Object.keys(codes).forEach((code) => {
-      let http_code = codes[code];
-      if (typeof http_code === 'number') {
-        expect(codes.statusTexts).to.have.own.property(http_code);
-      }
+    Object.keys(constants).forEach((code) => {
+      expect(statusTexts).to.have.own.property(constants[code]);
     });
   });
 
   it ('should have text for valid codes', () => {
-    expect(codes.getStatusText(400)).to.be.equal('Bad Request');
-    expect(codes.getStatusText(400)).to.be.equal(codes.getStatusText(codes.BAD_REQUEST));
+    expect(getStatusText(400)).to.be.equal('Bad Request');
+    expect(getStatusText(400)).to.be.equal(getStatusText(constants.BAD_REQUEST));
 
-    expect(codes.getStatusText(404)).to.be.equal('Not Found');
-    expect(codes.getStatusText(404)).to.be.equal(codes.getStatusText(codes.NOT_FOUND));
+    expect(getStatusText(404)).to.be.equal('Not Found');
+    expect(getStatusText(404)).to.be.equal(getStatusText(constants.NOT_FOUND));
 
-    expect(codes.getStatusText(500)).to.be.equal('Internal Server Error');
-    expect(codes.getStatusText(500)).to.be.equal(codes.getStatusText(codes.INTERNAL_SERVER_ERROR));
+    expect(getStatusText(500)).to.be.equal('Internal Server Error');
+    expect(getStatusText(500)).to.be.equal(getStatusText(constants.INTERNAL_SERVER_ERROR));
 
-    Object.keys(codes).forEach((code) => {
-      let http_code = codes[code];
-      if (typeof http_code === 'number') {
-        expect(codes.getStatusText(http_code)).to.be.equal(codes.statusTexts[http_code]);
-      }
+    Object.keys(constants).forEach((code) => {
+      let http_code = constants[code];
+      expect(getStatusText(http_code)).to.be.equal(statusTexts[http_code]);
     });
   });
 
   it ('should throw error for invalid codes', () => {
     [0, 50, 99, 227, 103, 309, 452, 512].forEach((code) => {
-      expect(() => codes.getStatusText(code)).to.throw(Error);
+      expect(() => getStatusText(code)).to.throw(Error);
     });
   });
 });
