@@ -4,7 +4,7 @@
 
 'use strict';
 
-let codes = require('./constants');
+let constants = require('./constants');
 
 export const is_one_of = (code, codes) => {
   let http_code = parseInt(code);
@@ -22,8 +22,8 @@ export const is_one_of = (code, codes) => {
  */
 export const is_informational = (code) => {
   let http_codes = [
-    codes.CONTINUE,
-    codes.SWITCHING_PROTOCOLS
+    constants.CONTINUE,
+    constants.SWITCHING_PROTOCOLS
   ];
 
   return is_one_of(code, http_codes);
@@ -35,16 +35,16 @@ export const is_informational = (code) => {
  */
 export const is_success = (code) => {
   let http_codes = [
-    codes.OK,
-    codes.CREATED,
-    codes.ACCEPTED,
-    codes.NON_AUTHORITATIVE_INFORMATION,
-    codes.NO_CONTENT,
-    codes.RESET_CONTENT,
-    codes.PARTIAL_CONTENT,
-    codes.MULTI_STATUS,
-    codes.ALREADY_REPORTED,
-    codes.IM_USED
+    constants.OK,
+    constants.CREATED,
+    constants.ACCEPTED,
+    constants.NON_AUTHORITATIVE_INFORMATION,
+    constants.NO_CONTENT,
+    constants.RESET_CONTENT,
+    constants.PARTIAL_CONTENT,
+    constants.MULTI_STATUS,
+    constants.ALREADY_REPORTED,
+    constants.IM_USED
   ];
 
   return is_one_of(code, http_codes);
@@ -56,15 +56,15 @@ export const is_success = (code) => {
  */
 export const is_redirect = (code) => {
   let http_codes = [
-    codes.MULTIPLE_CHOICES,
-    codes.MOVED_PERMANENTLY,
-    codes.FOUND,
-    codes.SEE_OTHER,
-    codes.NOT_MODIFIED,
-    codes.USE_PROXY,
-    codes.SWITCH_PROXY,
-    codes.TEMPORARY_REDIRECT,
-    codes.PERMANENT_REDIRECT
+    constants.MULTIPLE_CHOICES,
+    constants.MOVED_PERMANENTLY,
+    constants.FOUND,
+    constants.SEE_OTHER,
+    constants.NOT_MODIFIED,
+    constants.USE_PROXY,
+    constants.SWITCH_PROXY,
+    constants.TEMPORARY_REDIRECT,
+    constants.PERMANENT_REDIRECT
   ];
 
   return is_one_of(code, http_codes);
@@ -76,34 +76,34 @@ export const is_redirect = (code) => {
  */
 export const is_client_error = (code) => {
   let http_codes = [
-    codes.BAD_REQUEST,
-    codes.UNAUTHORIZED,
-    codes.PAYMENT_REQUIRED,
-    codes.FORBIDDEN,
-    codes.NOT_FOUND,
-    codes.METHOD_NOT_ALLOWED,
-    codes.NOT_ACCEPTABLE,
-    codes.PROXY_AUTHENTICATION_REQUIRED,
-    codes.REQUEST_TIMEOUT,
-    codes.CONFLICT,
-    codes.GONE,
-    codes.LENGTH_REQUIRED,
-    codes.PRECONDITION_FAILED,
-    codes.REQUEST_ENTITY_TOO_LARGE,
-    codes.REQUEST_URI_TOO_LONG,
-    codes.UNSUPPORTED_MEDIA_TYPE,
-    codes.REQUESTED_RANGE_NOT_SATISFIABLE,
-    codes.EXPECTATION_FAILED,
-    codes.IM_A_TEAPOT,
-    codes.MISDIRECTED_REQUEST,
-    codes.UNPROCESSABLE_ENTITY,
-    codes.LOCKED,
-    codes.FAILED_DEPENDENCY,
-    codes.UPGRADE_REQUIRED,
-    codes.PRECONDITION_REQUIRED,
-    codes.TOO_MANY_REQUESTS,
-    codes.REQUEST_HEADER_FIELDS_TOO_LARGE,
-    codes.UNAVAILABLE_FOR_LEGAL_REASONS
+    constants.BAD_REQUEST,
+    constants.UNAUTHORIZED,
+    constants.PAYMENT_REQUIRED,
+    constants.FORBIDDEN,
+    constants.NOT_FOUND,
+    constants.METHOD_NOT_ALLOWED,
+    constants.NOT_ACCEPTABLE,
+    constants.PROXY_AUTHENTICATION_REQUIRED,
+    constants.REQUEST_TIMEOUT,
+    constants.CONFLICT,
+    constants.GONE,
+    constants.LENGTH_REQUIRED,
+    constants.PRECONDITION_FAILED,
+    constants.REQUEST_ENTITY_TOO_LARGE,
+    constants.REQUEST_URI_TOO_LONG,
+    constants.UNSUPPORTED_MEDIA_TYPE,
+    constants.REQUESTED_RANGE_NOT_SATISFIABLE,
+    constants.EXPECTATION_FAILED,
+    constants.IM_A_TEAPOT,
+    constants.MISDIRECTED_REQUEST,
+    constants.UNPROCESSABLE_ENTITY,
+    constants.LOCKED,
+    constants.FAILED_DEPENDENCY,
+    constants.UPGRADE_REQUIRED,
+    constants.PRECONDITION_REQUIRED,
+    constants.TOO_MANY_REQUESTS,
+    constants.REQUEST_HEADER_FIELDS_TOO_LARGE,
+    constants.UNAVAILABLE_FOR_LEGAL_REASONS
   ];
 
   return is_one_of(code, http_codes);
@@ -115,17 +115,17 @@ export const is_client_error = (code) => {
  */
 export const is_server_error = (code) => {
   let http_codes = [
-    codes.INTERNAL_SERVER_ERROR,
-    codes.NOT_IMPLEMENTED,
-    codes.BAD_GATEWAY,
-    codes.SERVICE_UNAVAILABLE,
-    codes.GATEWAY_TIMEOUT,
-    codes.HTTP_VERSION_NOT_SUPPORTED,
-    codes.VARIANT_ALSO_NEGOTIATES,
-    codes.INSUFFICIENT_STORAGE,
-    codes.LOOP_DETECTED,
-    codes.NOT_EXTENDED,
-    codes.NETWORK_AUTHENTICATION_REQUIRED
+    constants.INTERNAL_SERVER_ERROR,
+    constants.NOT_IMPLEMENTED,
+    constants.BAD_GATEWAY,
+    constants.SERVICE_UNAVAILABLE,
+    constants.GATEWAY_TIMEOUT,
+    constants.HTTP_VERSION_NOT_SUPPORTED,
+    constants.VARIANT_ALSO_NEGOTIATES,
+    constants.INSUFFICIENT_STORAGE,
+    constants.LOOP_DETECTED,
+    constants.NOT_EXTENDED,
+    constants.NETWORK_AUTHENTICATION_REQUIRED
   ];
 
   return is_one_of(code, http_codes);
