@@ -1,5 +1,5 @@
-# http-client-status
-Inspect/Check HTTP status code
+# http-client-status [![Build Status](https://travis-ci.org/jimmycodesocial/http-client-status.svg?branch=master)](https://travis-ci.org/jimmycodesocial/http-client-status)
+Inspect/Check HTTP status code.
 
 ## Install
 ```
@@ -10,7 +10,14 @@ $ npm install --save http-client-status
 *Get text description of code.*
 
 ```js
+// ES6
 import { constants, codes, getStatusText } from 'http-client-status';
+
+// or
+var httpClientStatus = require('http-client-status');
+var constants = httpClientStatus.constants,
+    codes = httpClientStatus.codes,
+    getStatusText = httpClientStatus.getStatusText;
 
 console.log(codes[404]); 
 //=> Not Found
@@ -27,6 +34,7 @@ console.log(getStatusText(constants.NOT_FOUND));
 
 *Check group.*
 ```js
+// ES6
 import {
   constants,
   is_informational,
@@ -35,6 +43,15 @@ import {
   is_client_error,
   is_server_error
 } from 'http-client-status';
+
+// or
+var httpClientStatus = require('http-client-status');
+var constants = httpClientStatus.constants,
+  is_informational = httpClientStatus.is_informational,
+  is_success = httpClientStatus.is_success,
+  is_redirect = httpClientStatus.is_redirect,
+  is_client_error = httpClientStatus.is_client_error,
+  is_server_error = httpClientStatus.is_server_error;
 
 console.log(is_informational(101)); 
 //=> true
