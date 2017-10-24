@@ -1,5 +1,5 @@
 /**
- * Copyright(c) 2016 JimmyCode Social <hi@jimmycode.com> (https =//jimmycode.com)
+ * Copyright(c) 2016 JimmyCode Social <hi@jimmycode.com> (https://jimmycode.com)
  */
 
 'use strict';
@@ -50,10 +50,10 @@ export const EXPECTATION_FAILED = 417;
 export const IM_A_TEAPOT = 418;
 export const MISDIRECTED_REQUEST = 421;
 export const UNPROCESSABLE_ENTITY = 422;
-export const UPGRADE_REQUIRED = 426;
-export const PRECONDITION_REQUIRED = 428;
 export const LOCKED = 423;
 export const FAILED_DEPENDENCY = 424;
+export const UPGRADE_REQUIRED = 426;
+export const PRECONDITION_REQUIRED = 428;
 export const TOO_MANY_REQUESTS = 429;
 export const REQUEST_HEADER_FIELDS_TOO_LARGE = 431;
 export const UNAVAILABLE_FOR_LEGAL_REASONS = 451;

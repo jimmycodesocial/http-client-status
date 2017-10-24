@@ -1,5 +1,5 @@
 /**
- * Copyright(c) 2016 JimmyCode Social <hi@jimmycode.com> (https =//jimmycode.com)
+ * Copyright(c) 2016 JimmyCode Social <hi@jimmycode.com> (https://jimmycode.com)
  */
 
 'use strict';
@@ -7,7 +7,7 @@
 import { expect } from 'chai';
 const codes = require('../src/codes');
 
-describe('codes()', () => {
+describe('codes', () => {
   it ('should have a text description', () => {
     Object.keys(codes).forEach((code) => {
       let http_code = codes[code];
@@ -17,10 +17,15 @@ describe('codes()', () => {
     });
   });
 
-  it ('should get text for valida codes', () => {
+  it ('should have text for valid codes', () => {
     expect(codes.getStatusText(400)).to.be.equal('Bad Request');
+    expect(codes.getStatusText(400)).to.be.equal(codes.getStatusText(codes.BAD_REQUEST));
+
     expect(codes.getStatusText(404)).to.be.equal('Not Found');
+    expect(codes.getStatusText(404)).to.be.equal(codes.getStatusText(codes.NOT_FOUND));
+
     expect(codes.getStatusText(500)).to.be.equal('Internal Server Error');
+    expect(codes.getStatusText(500)).to.be.equal(codes.getStatusText(codes.INTERNAL_SERVER_ERROR));
 
     Object.keys(codes).forEach((code) => {
       let http_code = codes[code];
